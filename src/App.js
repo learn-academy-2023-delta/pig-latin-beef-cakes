@@ -33,6 +33,38 @@ const App = () => {
 
       // ACTION ITEM: your Pig Latin logic goes here!
 
+      for(let i = 0; i<eachWord.length; i++){
+        
+        // check whether 1st index is a vowel or not
+        if(eachWord[0]===vowelsArray[i]){
+          return eachWord.concat("way")
+        }
+
+        // checks for qu or squ
+
+        if(eachWord.slice(0, 3).includes("squ")) {
+          return eachWord.slice(3) + "squay"
+        } else if(eachWord.slice(0, 2).includes("qu")) {
+          return eachWord.slice(2) + "quay"
+        }
+
+        // checks for no vowels and 'y'
+        let subWord = eachWord.slice(0, eachWord.indexOf('y'))
+        if(eachWord.includes('y')){
+          return eachWord.slice(eachWord.indexOf('y')).concat(subWord + "ay")
+        }
+
+      }
+
+
+
+
+      for(let i=0; i<eachWord.length; i++){
+        if(eachWord.includes(vowelsArray[i] === false)) {
+          return eachWord.slice(eachWord.indexOf('y')) // fry
+        }
+      }
+
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
